@@ -14,6 +14,22 @@ import { Pokemon } from './interfaces/pokemon.interface';
     <div class="container">
       <h1>Pokemon Gallery</h1>
       
+      <div class="pagination">
+        <button
+          (click)="loadPrevious()"
+          [disabled]="currentOffset === 0">
+          Previous
+        </button>
+        <span class="page-info">
+          Showing {{ currentOffset + 1 }}-{{ currentOffset + pokemonList.length }}
+        </span>
+        <button
+          (click)="loadNext()"
+          [disabled]="!hasMore">
+          Next
+        </button>
+      </div>
+
       <div class="loading" *ngIf="loading">
         <div class="spinner"></div>
         <p>Loading Pokemon...</p>

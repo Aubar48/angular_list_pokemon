@@ -9,7 +9,7 @@ import { Pokemon } from '../../interfaces/pokemon.interface';
   template: `
     <div class="pokemon-card">
       <img [src]="pokemon.sprites.front_default" [alt]="pokemon.name" class="pokemon-image">
-      <h3 class="pokemon-name">{{ pokemon.name | titlecase }}</h3>
+      <h3 class="pokemon-name">{{pokemon.id}} - {{ pokemon.name | titlecase }} </h3>
       <div class="types">
         <span *ngFor="let type of pokemon.types" 
               [class]="'type ' + type.type.name">
